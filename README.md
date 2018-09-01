@@ -21,7 +21,8 @@ The loss.py provides the implementation of three kinds of loss function: cross e
 ```bash
 python ./main.py --loss_type margin_loss --embedding_type static -- model_type CNN --learning_rate 0.0005
 
-python ./main.py --loss_type margin_loss --embedding_type static -- model_type capsule-A --learning_rate 0.001
+python ./main.py --loss_type margin_loss --embedding_type static -- model_type capsule-A 
+--learning_rate 0.001
 ```
 
 The main functions are already in this repository. The next update will including more detailed instructions. For any questions, you can report issue here.
