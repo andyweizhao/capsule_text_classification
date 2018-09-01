@@ -60,3 +60,5 @@ ER: 0.262 Precision: 0.884 Recall: 0.577 F1: 0.679
 Epoch: 7  Val accuracy: 95.8%  Loss: 0.0294
 ER: 0.246 Precision: 0.881 Recall: 0.566 F1: 0.671
 ```
+
+Note that Val accuracy and loss is evaluated on dev (single-label), the metrics such as ER and Precision are evaluated on test (multi-label).
