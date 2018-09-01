@@ -31,8 +31,6 @@ def routing(u_hat_vecs, beta_a, iterations, output_capsule_num, i_activations):
             c = tf.split(leaky_routing, [1, output_capsule_num], axis=1)[1]
         else:
             c = softmax(b, 1)   
-#        if i_activations is not None:
-#            tf.transpose(tf.transpose(c, perm=[0,2,1]) * i_activations, perm=[0,2,1]) 
         outputs = squash_v1(K.batch_dot(c, u_hat_vecs, [2, 2]))
         if i < iterations - 1:
             b = b + K.batch_dot(outputs, u_hat_vecs, [2, 3])                                    
