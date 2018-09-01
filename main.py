@@ -7,16 +7,16 @@ from sklearn.metrics import precision_recall_fscore_support
 from sklearn.metrics import accuracy_score
 from sklearn.cross_validation import train_test_split
 from loss import spread_loss, cross_entropy, margin_loss
-from network import baseline_model_kimcnn, capsule_model_A, capsule_model_B
+from network import baseline_model_kimcnn, baseline_model_cnn, capsule_model_A, capsule_model_B
 from sklearn.utils import shuffle
 
 tf.reset_default_graph()
-np.random.seed(2)
-tf.set_random_seed(2)
+np.random.seed(0)
+tf.set_random_seed(0)
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--embedding_type', type=str, default='nonstatic',
+parser.add_argument('--embedding_type', type=str, default='static',
                     help='Options: rand (randomly initialized word embeddings), static (pre-trained embeddings from word2vec, static during learning), nonstatic (pre-trained embeddings, tuned during learning), multichannel (two embedding channels, one static and one nonstatic)')
 
 parser.add_argument('--dataset', type=str, default='reuters_multilabel_dataset',
@@ -25,8 +25,8 @@ parser.add_argument('--dataset', type=str, default='reuters_multilabel_dataset',
 parser.add_argument('--loss_type', type=str, default='margin_loss',
                     help='margin_loss, spread_loss, cross_entropy')
 
-parser.add_argument('--model_type', type=str, default='CNN',
-                    help='CNN, capsule-A, capsule-B')
+parser.add_argument('--model_type', type=str, default='capsule-B',
+                    help='CNN, KIMCNN, capsule-A, capsule-B')
 
 parser.add_argument('--has_test', type=int, default=1, help='If data has test, we use it. Otherwise, we use CV on folds')    
 parser.add_argument('--has_dev', type=int, default=1, help='If data has dev, we use it, otherwise we split from train')    
@@ -34,10 +34,8 @@ parser.add_argument('--has_dev', type=int, default=1, help='If data has dev, we 
 parser.add_argument('--num_epochs', type=int, default=20, help='Number of training epochs')
 parser.add_argument('--batch_size', type=int, default=25, help='Batch size for training')
 
-#parser.add_argument('--kernels', type=str, default='{3,4,5}', help='Kernel sizes of convolutions, table format')
 parser.add_argument('--use_orphan', type=bool, default='True', help='Add orphan capsule or not')
-parser.add_argument('--use_shared', type=bool, default='False', help='Use shared transformation matrix or not')
-parser.add_argument('--use_leaky', type=bool, default='True', help='Use leaky-softmax or not')
+parser.add_argument('--use_leaky', type=bool, default='False', help='Use leaky-softmax or not')
 parser.add_argument('--learning_rate', type=float, default=0.001, help='learning rate for training')#CNN 0.0005 
 parser.add_argument('--margin', type=float, default=0.2, help='the initial value for spread loss')
 
@@ -166,7 +164,9 @@ if args.model_type == 'capsule-A':
 if args.model_type == 'capsule-B':    
     poses, activations = capsule_model_B(X_embedding, args.num_classes)    
 if args.model_type == 'CNN':    
-    poses, activations = baseline_model_kimcnn(X_embedding, args.max_sent, args.num_classes)    
+    poses, activations = baseline_model_cnn(X_embedding, args.num_classes)
+if args.model_type == 'KIMCNN':    
+    poses, activations = baseline_model_kimcnn(X_embedding, args.max_sent, args.num_classes)   
     
 if args.loss_type == 'spread_loss':
     loss = spread_loss(y, activations, margin)
@@ -203,7 +203,6 @@ mr_test = BatchGenerator(test,test_label, args.batch_size, 0, is_shuffle=False)
 best_model = None
 best_epoch = 0
 best_acc_val = 0.
-best_loss_val = -np.inf
 
 init = tf.global_variables_initializer()
 sess.run(init)     
@@ -239,9 +238,8 @@ for epoch in range(args.num_epochs):
         loss_vals.append(loss_val)
         acc_vals.append(acc_val)
     loss_val, acc_val = np.mean(loss_vals), np.mean(acc_vals)    
-    print("\rEpoch: {}  Val accuracy: {:.4f}%  Loss: {:.6f}, {:.4f}, {:.4f}{}".format(
-        epoch + 1, acc_val * 100, loss_val, 0, 0,
-        " (improved)" if loss_val < best_loss_val else ""))
+    print("\rEpoch: {}  Val accuracy: {:.1f}%  Loss: {:.4f}".format(
+        epoch + 1, acc_val * 100, loss_val))
                
     preds_list, y_list = [], []
     for iteration in range(1, n_iterations_test + 1):
@@ -261,5 +259,8 @@ for epoch in range(args.num_epochs):
         precision_recall_fscore_support(y_list, preds_probs, average='samples')
     acc = accuracy_score(y_list, preds_probs)
 
-    print ('\r%.4f' % acc, '%.4f' % precision, '%.4f' % recall, '%.4f' % F1)  
-    m = min(0.9, m + 0.1)
+    print ('\rER: %.3f' % acc, 'Precision: %.3f' % precision, 'Recall: %.3f' % recall, 'F1: %.3f' % F1)  
+    if args.model_type == 'CNN' or args.model_type == 'KIMCNN':
+        lr = max(1e-6, lr * 0.8)
+    if args.loss_type == 'margin_loss':    
+        m = min(0.9, m + 0.1)
