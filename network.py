@@ -43,7 +43,7 @@ def baseline_model_kimcnn(X, max_sent, num_classes):
         
 def capsule_model_B(X, num_classes):
     poses_list = []
-    for _, ngram in enumerate([3,4,5]):
+    for _, ngram in enumerate([3,4]):
         with tf.variable_scope('capsule_'+str(ngram)): 
             nets = _conv2d_wrapper(
                 X, shape=[ngram, 300, 1, 32], strides=[1, 2, 1, 1], padding='VALID', 
@@ -53,7 +53,6 @@ def capsule_model_B(X, num_classes):
             nets = capsules_init(nets, shape=[1, 1, 32, 16], strides=[1, 1, 1, 1], 
                                  padding='VALID', pose_shape=16, add_bias=True, name='primary')                        
             nets = capsule_conv_layer(nets, shape=[3, 1, 16, 16], strides=[1, 1, 1, 1], iterations=3, name='conv2')
-    #        nets = capsule_conv_layer(nets, shape=[3, 1, 32, 32], strides=[1, 1, 1, 1], iterations=2, name='conv3')
             nets = capsule_flatten(nets)
             poses, activations = capsule_fc_layer(nets, num_classes, 3, 'fc2')
             poses_list.append(poses)
