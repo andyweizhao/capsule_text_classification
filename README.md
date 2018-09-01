@@ -70,3 +70,13 @@ ER: 0.246 Precision: 0.881 Recall: 0.566 F1: 0.671
 Notes: Val accuracy and loss are evaluated on dev (single-label), the metrics such as ER and Precision are evaluated on test (multi-label).
 
 The main functions are already in this repository. For any questions, you can report issue here.
+
+# Reference
+If you find our source code useful, please consider citing our work.
+
+@article{zhao2018investigating,
+  title={Investigating Capsule Networks with Dynamic Routing for Text Classification},
+  author={Zhao, Wei and Ye, Jianbo and Yang, Min and Lei, Zeyang and Zhang, Suofei and Zhao, Zhou},
+  journal={arXiv preprint arXiv:1804.00538},
+  year={2018}
+}
