@@ -24,7 +24,7 @@ python ./main.py -- model_type CNN --learning_rate 0.0005
 python ./main.py -- model_type capsule-A --learning_rate 0.001
 ```
 
-The main functions are already in this repository. The next update will including more detailed instructions. For any questions, you can report issue here.
+The main functions are already in this repository. For any questions, you can report issue here.
 
 # Performance on Reuters-Multilabel dataset
 
