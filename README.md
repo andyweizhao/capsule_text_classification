@@ -73,10 +73,11 @@ The main functions are already in this repository. For any questions, you can re
 
 # Reference
 If you find our source code useful, please consider citing our work.
-
+```
 @article{zhao2018investigating,
   title={Investigating Capsule Networks with Dynamic Routing for Text Classification},
   author={Zhao, Wei and Ye, Jianbo and Yang, Min and Lei, Zeyang and Zhang, Suofei and Zhao, Zhou},
   journal={arXiv preprint arXiv:1804.00538},
   year={2018}
 }
+```
