@@ -43,6 +43,14 @@ ER: 0.600 Precision: 0.850 Recall: 0.854 F1: 0.831
 Epoch: 7  Val accuracy: 92.0%  Loss: 0.0474
 ER: 0.600 Precision: 0.873 Recall: 0.837 F1: 0.833
 
+Capsule-B
+Epoch: 1  Val accuracy: 82.7%  Loss: 0.0867
+ER: 0.031 Precision: 0.257 Recall: 0.226 F1: 0.235
+Epoch: 2  Val accuracy: 90.9%  Loss: 0.0586
+ER: 0.458 Precision: 0.752 Recall: 0.663 F1: 0.692
+Epoch: 3  Val accuracy: 93.9%  Loss: 0.0431
+ER: 0.612 Precision: 0.943 Recall: 0.792 F1: 0.841
+
 CNN:
 ER: 0.028 Precision: 0.307 Recall: 0.199 F1: 0.234
 Epoch: 2  Val accuracy: 92.0%  Loss: 0.0462
