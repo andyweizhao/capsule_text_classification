@@ -8,7 +8,7 @@ Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
 The reuters_process.py provides functions to clean the raw data and generate Reuters-Multilabel and Reuters-Full datasets. For quick start, please refer to [downloadDataset](https://drive.google.com/open?id=1a4rB6B1FDf7epZZlwXIppaSA7Nr8wSpt) for the Reuters Multi-label dataset.
 
 # More explanation 
-The utils.py includes several wrapped and fundamental functions such as _conv2d_wrapper, _separable_conv2d_wrapper and _get_variable_wrapper etc. to make programming efficiently.
+The utils.py includes several wrapped and fundamental functions such as _conv2d_wrapper, _separable_conv2d_wrapper and _get_variable_wrapper etc.
 
 The layers.py implements capsule network including Primary Capsule Layer, Convolutional Capsule Layer, Capsule Flatten Layer and FC Capsule Layer.
 
