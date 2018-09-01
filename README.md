@@ -24,8 +24,6 @@ python ./main.py -- model_type CNN --learning_rate 0.0005
 python ./main.py -- model_type capsule-A --learning_rate 0.001
 ```
 
-The main functions are already in this repository. For any questions, you can report issue here.
-
 # Performance on Reuters-Multilabel dataset
 
 ```bash
@@ -62,3 +60,5 @@ ER: 0.246 Precision: 0.881 Recall: 0.566 F1: 0.671
 ```
 
 Notes: Val accuracy and loss are evaluated on dev (single-label), the metrics such as ER and Precision are evaluated on test (multi-label).
+
+The main functions are already in this repository. For any questions, you can report issue here.
