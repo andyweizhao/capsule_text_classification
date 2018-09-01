@@ -26,7 +26,7 @@ python ./main.py -- model_type capsule-A --learning_rate 0.001
 
 The main functions are already in this repository. The next update will including more detailed instructions. For any questions, you can report issue here.
 
-# See performance on Reuters-Multilabel dataset
+# Performance on Reuters-Multilabel dataset
 
 ```bash
 Capsule-A
