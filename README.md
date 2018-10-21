@@ -88,3 +88,5 @@ If you find our source code useful, please consider citing our work.
   year={2018}
 }
 ```
+
+Our second paper makes Capsule Network in relation with Kernel Density Estimation.
