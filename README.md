@@ -80,4 +80,11 @@ If you find our source code useful, please consider citing our work.
   journal={arXiv preprint arXiv:1804.00538},
   year={2018}
 }
+
+@article{zhang2018fast,
+  title={Fast Dynamic Routing Based on Weighted Kernel Density Estimation},
+  author={Zhang, Suofei and Zhao, Wei and Wu, Xiaofu and Zhou, Quan},
+  journal={arXiv preprint arXiv:1805.10807},
+  year={2018}
+}
 ```
