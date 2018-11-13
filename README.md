@@ -19,9 +19,9 @@ The loss.py provides the implementation of three kinds of loss function: cross e
 # Quick start
 
 ```bash
-python ./main.py -- model_type CNN --learning_rate 0.0005
+python ./main.py --model_type CNN --learning_rate 0.0005
 
-python ./main.py -- model_type capsule-A --learning_rate 0.001
+python ./main.py --model_type capsule-A --learning_rate 0.001
 ```
 
 # Performance on Reuters-Multilabel dataset
