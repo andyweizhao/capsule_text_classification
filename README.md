@@ -5,7 +5,7 @@ Implementation of our paper
 Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
 
 # Data Preparation
-The reuters_process.py provides functions to clean the raw data and generate Reuters-Multilabel and Reuters-Full datasets. For quick start, please refer to [Reuters](https://drive.google.com/open?id=1a4rB6B1FDf7epZZlwXIppaSA7Nr8wSpt) for the Reuters-Multilabel dataset. For other datasets, please access to [others](https://drive.google.com/open?id=1fqbPmDUYzz7WAsjkVDdrfXWFI4beASBP)
+The reuters_process.py provides functions to clean the raw data and generate Reuters-Multilabel and Reuters-Full datasets. For quick start, please refer to [Reuters](https://drive.google.com/open?id=1a4rB6B1FDf7epZZlwXIppaSA7Nr8wSpt) for the Reuters-Multilabel dataset. For other datasets, please access to [Others](https://drive.google.com/open?id=1fqbPmDUYzz7WAsjkVDdrfXWFI4beASBP).
 
 # More explanation 
 The utils.py includes several wrapped and fundamental functions such as _conv2d_wrapper, _separable_conv2d_wrapper and _get_variable_wrapper etc.
