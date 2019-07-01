@@ -3,6 +3,7 @@ Implementation of our paper
 ["Investigating Capsule Networks with Dynamic Routing for Text Classification"](https://arxiv.org/pdf/1804.00538.pdf) which is accepted by EMNLP18.
 
 Link to our recent capsule project: https://github.com/andyweizhao/NLP-Capsule 
+
 ACL19 preprint: ["Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications"](https://arxiv.org/abs/1906.02829)
 
 Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
