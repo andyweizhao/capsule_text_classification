@@ -2,7 +2,8 @@
 Implementation of our paper 
 ["Investigating Capsule Networks with Dynamic Routing for Text Classification"](https://arxiv.org/pdf/1804.00538.pdf) which is accepted by EMNLP18.
 
-Link to our recent capsule project: https://github.com/andyweizhao/NLP-Capsule ACL19 preprint: ["Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications"](https://arxiv.org/abs/1906.02829)
+Link to our recent capsule project: https://github.com/andyweizhao/NLP-Capsule 
+ACL19 preprint: ["Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications"](https://arxiv.org/abs/1906.02829)
 
 Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
 
@@ -76,7 +77,7 @@ The main functions are already in this repository. For any questions, you can re
 # Reference
 If you find our source code useful, please consider citing our work.
 ```
-@inproceedings{zhao2018investigating,
+@inproceedings{zhao2018capsule,
   year = {2018},
   author = {Wei Zhao and Jianbo Ye and Min Yang and Zeyang Lei and Suofei Zhang and Zhou Zhao},
   month = {September},
@@ -85,7 +86,7 @@ If you find our source code useful, please consider citing our work.
   url = {https://www.aclweb.org/anthology/D18-1350}
 }
 
-@inproceedings{tubiblio114295,
+@inproceedings{zhao2019capsule,
   title = {Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications},
   month = {May},
   year = {2019},
