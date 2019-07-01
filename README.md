@@ -1,6 +1,8 @@
 # Text Classification with Capsule Network
 Implementation of our paper 
-["Investigating Capsule Networks with Dynamic Routing for Text Classification"](https://arxiv.org/pdf/1804.00538.pdf) which is accepted by EMNLP-18.
+["Investigating Capsule Networks with Dynamic Routing for Text Classification"](https://arxiv.org/pdf/1804.00538.pdf) which is accepted by EMNLP18.
+
+Link to our recent capsule project: https://github.com/andyweizhao/NLP-Capsule ACL19 preprint: ["Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications"](https://arxiv.org/abs/1906.02829)
 
 Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
 
@@ -74,11 +76,23 @@ The main functions are already in this repository. For any questions, you can re
 # Reference
 If you find our source code useful, please consider citing our work.
 ```
-@article{zhao2018investigating,
-  title={Investigating Capsule Networks with Dynamic Routing for Text Classification},
-  author={Zhao, Wei and Ye, Jianbo and Yang, Min and Lei, Zeyang and Zhang, Suofei and Zhao, Zhou},
-  journal={arXiv preprint arXiv:1804.00538},
-  year={2018}
+@inproceedings{zhao2018investigating,
+  year = {2018},
+  author = {Wei Zhao and Jianbo Ye and Min Yang and Zeyang Lei and Suofei Zhang and Zhou Zhao},
+  month = {September},
+  title = {Investigating Capsule Networks with Dynamic Routing for Text Classification},
+  booktitle = {Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
+  url = {https://www.aclweb.org/anthology/D18-1350}
+}
+
+@inproceedings{tubiblio114295,
+  title = {Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications},
+  month = {May},
+  year = {2019},
+  author = {Wei Zhao and Haiyun Peng and Steffen Eger and Eric Cambria and Min Yang},
+  address = {Florence, Italy},
+  booktitle = {Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  url = {http://tubiblio.ulb.tu-darmstadt.de/114295/}
 }
 
 @article{zhang2018fast,
