@@ -2,11 +2,11 @@
 Implementation of our paper 
 ["Investigating Capsule Networks with Dynamic Routing for Text Classification"](https://arxiv.org/pdf/1804.00538.pdf) which is accepted by EMNLP18.
 
+Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
+
 Link to our recent capsule project: https://github.com/andyweizhao/NLP-Capsule 
 
 ACL19 preprint: ["Towards Scalable and Reliable Capsule Networks for Challenging NLP Applications"](https://arxiv.org/abs/1906.02829)
-
-Requirements: Code is written in Python (2.7) and requires Tensorflow (1.4.1).
 
 # Data Preparation
 The reuters_process.py provides functions to clean the raw data and generate Reuters-Multilabel and Reuters-Full datasets. For quick start, please refer to [Reuters](https://drive.google.com/open?id=1a4rB6B1FDf7epZZlwXIppaSA7Nr8wSpt) for the Reuters-Multilabel dataset. For other datasets, please access to [Others](https://drive.google.com/open?id=1fqbPmDUYzz7WAsjkVDdrfXWFI4beASBP).
