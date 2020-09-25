@@ -22,7 +22,7 @@ scikit-learn==0.17.1
 scipy==1.1.0
 six==1.11.0
 tensorboard==1.11.0
-tensorflow==1.4.1
+tensorflow==1.15.4
 tensorflow-tensorboard==0.4.0
 termcolor==1.1.0
 Theano==0.8.0
