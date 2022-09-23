@@ -16,7 +16,7 @@ Markdown==3.0.1
 mock==2.0.0
 numpy==1.15.3
 pbr==5.1.0
-protobuf==3.6.1
+protobuf==3.18.3
 PyYAML==3.13
 scikit-learn==0.17.1
 scipy==1.1.0
